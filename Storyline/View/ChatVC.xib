@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatVC" customModule="Storyline" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonSend" destination="zeo-M5-cIL" id="NO0-uM-n1l"/>
+                <outlet property="cameraButton" destination="JVm-tr-5ab" id="dP1-fW-woq"/>
+                <outlet property="inputTextField" destination="WE6-My-AEL" id="CU8-V3-DcT"/>
+                <outlet property="tableView" destination="XoK-0J-Cth" id="LEe-kA-35O"/>
+                <outlet property="textfieldBottomConstraint" destination="ysK-d8-0I4" id="X9F-3b-iHd"/>
+                <outlet property="textfieldTopConstraint" destination="K7c-Eg-hnB" id="Oyx-vI-YOQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XoK-0J-Cth">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9Zp-NI-dSk"/>
+                        <outlet property="delegate" destination="-1" id="90D-Sn-pan"/>
+                    </connections>
+                </tableView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WE6-My-AEL">
+                    <rect key="frame" x="0.0" y="623" width="279" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="fq7-u8-NtV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeo-M5-cIL">
+                    <rect key="frame" x="287" y="623" width="82" height="38"/>
+                    <color key="backgroundColor" red="1" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="C5W-Xs-lvx"/>
+                        <constraint firstAttribute="width" constant="82" id="DtK-bV-feu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="Send">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sendAction:" destination="-1" eventType="touchUpInside" id="hSt-TV-XHf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVm-tr-5ab">
+                    <rect key="frame" x="162" y="616" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="0TL-aB-jI7"/>
+                        <constraint firstAttribute="height" constant="45" id="oB9-y8-mhe"/>
+                    </constraints>
+                    <state key="normal" image="photo-camera"/>
+                    <connections>
+                        <action selector="takePicture:" destination="-1" eventType="touchUpInside" id="seM-Me-lCu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WE6-My-AEL" firstAttribute="top" secondItem="XoK-0J-Cth" secondAttribute="bottom" constant="8" id="AeZ-B6-gwT"/>
+                <constraint firstItem="JVm-tr-5ab" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-3" id="Cmo-hr-C1K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zeo-M5-cIL" secondAttribute="trailing" constant="6" id="Gub-42-b7H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JVm-tr-5ab" secondAttribute="bottom" constant="6" id="IH8-WH-NbC"/>
+                <constraint firstItem="WE6-My-AEL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Je4-gE-BEH"/>
+                <constraint firstItem="zeo-M5-cIL" firstAttribute="top" secondItem="WE6-My-AEL" secondAttribute="top" id="K7c-Eg-hnB"/>
+                <constraint firstItem="XoK-0J-Cth" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QON-bJ-Cw9"/>
+                <constraint firstItem="XoK-0J-Cth" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bd5-L3-SQv"/>
+                <constraint firstItem="XoK-0J-Cth" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ddJ-Tv-N1N"/>
+                <constraint firstItem="zeo-M5-cIL" firstAttribute="leading" secondItem="WE6-My-AEL" secondAttribute="trailing" constant="8" id="gQS-PY-Bz4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WE6-My-AEL" secondAttribute="bottom" id="ysK-d8-0I4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="151.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="photo-camera" width="32" height="32"/>
+    </resources>
+</document>
